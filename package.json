@@ -1,0 +1,29 @@
+{
+  "name": "debuggoxy",
+  "version": "1.0.0",
+  "description": "Pseudo-proxy server for debugging HTTP requests",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/server/server.js",
+    "test": "npm run build & npm start",
+    "dev": "nodemon --watch src -e * --exec npm run test"
+  },
+  "keywords": [
+    "http",
+    "proxy",
+    "debug"
+  ],
+  "author": "HillGus",
+  "license": "ISC",
+  "dependencies": {
+    "@types/jquery": "^3.3.30",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "websocket": "^1.0.29"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.0",
+    "@types/node": "^12.6.2"
+  }
+}
