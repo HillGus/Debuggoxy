@@ -1,0 +1,55 @@
+.page-title {
+
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 500;
+  margin: 15px;
+  text-shadow: 0px 5px 5px rgba(100, 100, 100, 0.5);
+}
+
+.collapse {
+
+  width: 100%;
+  margin-top: 5px;
+  padding: 0px 15px;
+}
+
+.collapse .collapse-head.btn {
+
+  width: 100%;
+  text-align: left;
+  text-transform: none;
+}
+
+.collapse .collapse-body {
+
+  width: 100%;
+  padding: 10px;
+  margin-top: -10px;
+}
+
+.sub-title {
+
+  color: white;
+  font-size: 20px;
+  padding: 5px;
+}
+
+.topic {
+
+  color: white;
+  font-weight: 300;
+  font-size: 20px;
+  padding: 5px 0 5px 15px;
+}
+
+.data {
+
+  margin: 5px 15px 5px 15px;
+  padding: 10px;
+  background-color: rgba(252, 252, 252, 0.6);
+  border-radius: 5px;
+  border: 1px solid rgba(174, 174, 174, 0.6);
+  color: #616161;
+  overflow: auto;
+}

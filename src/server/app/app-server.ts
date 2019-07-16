@@ -23,7 +23,7 @@ export const initialize = (globalData: {sockets?: any[], httpServer?: http.Serve
 
     if (request.url === '/') {
       
-      sendFile(response, 'src/client/index.html');
+      sendFile(response, 'dist/client/index.html');
     } else if (!request.url.match(/^\/.*(\.)[^/]*$/)) {
 
       redirectRequest({ 
