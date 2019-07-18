@@ -1,18 +1,37 @@
 <html>
   <head>
     <title>Hoky</title>
+
+    <meta charset="utf-8">
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/vbmaterial.min.css">
   </head>
   <body>
-    <h1 class="page-title">Hoky</h1>
-    <div id="logs"></div>
+    <header>
+      <div class="center-text white-text header gradient-indigo-deep-purple">
+        <span class="page-title">Hoky</span>
+      <i class="material-icons uicon float-right hover-pointer" id="setting-btn">
+        settings
+      </i>
+      </div>
+    </header>
+    <main>
+      <div id="logs"></div>
+      <div class="drawer-overlay" id="drawer-overlay" data-drawer="drawer"></div>
+      <div id="drawer" class="drawer-right">
+        <div class="drawer-title">Configurações</div>
+      </div>
+    </main>
+    <footer></footer>
   </body>
   <script
   src="https://code.jquery.com/jquery-3.4.1.min.js"
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
   crossorigin="anonymous"></script>
   <script type="text/javascript" src="css/vbmaterial.min.js"></script>
-  <script type="text/javascript" src="client.js"></script>
+  <script type="text/javascript" src="js/settings.js"></script>
+  <script type="text/javascript" src="js/transactions.js"></script>
+  <script type="text/javascript" src="js/client.js"></script>
 </html>

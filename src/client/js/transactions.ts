@@ -1,15 +1,13 @@
-let socket;
+const listenToTransactions = () => {
 
-$(document).ready(() => {
+  socketService.onMessage((message) => {
 
-  socket = new WebSocket('ws://localhost:4300', 'yxoggubed');
-  socket.onerror = error => console.log('Error on socket:', error);
-  socket.onmessage = message => {
+    if (message && message.type === 'transaction') {
 
-    const transactions = JSON.parse(message.data);
-    $('#logs').append(createTransactionsLog(transactions));
-  };
-});
+      createTransactionsLog(message.data);
+    }
+  });
+}
 
 const createTransactionsLog = (transactions) => {
 

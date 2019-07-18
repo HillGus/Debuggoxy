@@ -1,10 +1,10 @@
 .page-title {
 
   text-transform: uppercase;
-  text-align: center;
+  font-size: 36px;
   font-weight: 500;
-  margin: 15px;
-  text-shadow: 0px 5px 5px rgba(100, 100, 100, 0.5);
+  position: absolute;
+  transform: translate(-25%, 0);
 }
 
 .collapse {
@@ -52,4 +52,41 @@
   border: 1px solid rgba(174, 174, 174, 0.6);
   color: #616161;
   overflow: auto;
+}
+
+.drawer-sub-title {
+
+  font-size: 18px;
+  display: block;
+  padding: 5px 5px 5px 10px;
+  color: #212121;
+}
+
+.settings-menu {
+  margin: 13px 10px 10px 10px !important;
+}
+
+.float-right {
+  float: right;
+}
+
+.uicon {
+  font-size: 40px;
+  margin: 5px;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.white-text {
+  text-shadow: 2px 2px 1px rgba(255, 255, 255, 0.4);
+}
+
+.header {
+  height: 50px;
+}
+
+.hover-pointer:hover {
+  cursor: pointer;
 }
