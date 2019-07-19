@@ -1,6 +1,6 @@
 import * as http from 'http';
 import * as websocket from 'websocket';
-
+import { logTransactions, getSettings } from './socket-communication';
 
 export const initialize = (globalData: {sockets?: any[], httpServer?: http.Server}) => {
 
@@ -28,8 +28,26 @@ export const initialize = (globalData: {sockets?: any[], httpServer?: http.Serve
 
     connection.on('message', message => {
 
-      console.log('Message from client:', message);
-      connection.send('Hello client!');
+      if (message.type !== 'utf8')
+        return;
+
+      try {
+        message = JSON.parse(message.utf8Data);
+      } catch (e) {
+        return;
+      }
+
+      if (message && message.type == 'settings') {
+
+        if (!message.data) {
+
+          const resposta = JSON.stringify({
+            type: 'settings',
+            data: getSettings()
+          });
+          connection.send(resposta);
+        }
+      }
     });
   });
 };

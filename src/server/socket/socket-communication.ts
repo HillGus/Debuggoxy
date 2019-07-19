@@ -29,3 +29,25 @@ export const logTransactions = ({ request, response, sockets }: { request: Reque
     sockets.forEach(socket => socket.send(socketMessage));
   });
 }
+
+export const getSettings = () => {
+  
+  return [
+    {
+      label: 'Redirecionamento de requisições',
+      name: 'requestRedirect',
+      fields: [
+        {
+          label: 'Endereço',
+          name: 'host',
+          value: 'localhost'
+        },
+        {
+          label: 'Porta',
+          name: 'port',
+          value: '4300'
+        }
+      ]
+    }
+  ];
+}

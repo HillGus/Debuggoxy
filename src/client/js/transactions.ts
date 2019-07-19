@@ -1,6 +1,6 @@
 const listenToTransactions = () => {
 
-  socketService.onMessage((message) => {
+  socketService.addMessageListener((message) => {
 
     if (message && message.type === 'transaction') {
 

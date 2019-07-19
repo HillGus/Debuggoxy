@@ -45,7 +45,7 @@ const loadSettingsIntoDOM = () => {
 
             if (field.value)
               input.val(field.value);
-            console.log(bar);
+
             settingMenu.append($('<li></li>').append(inputField.append(input, bar, label)));
           });
 
@@ -60,31 +60,15 @@ const loadSettingsIntoDOM = () => {
 
 const fetchSettings = (callback: (settings: any[]) => void) => {
 
-  const settings = [
-    {
-      label: 'Redirecionamento de requisições',
-      name: 'requestRedirect',
-      fields: [
-        {
-          label: 'Endereço',
-          name: 'host',
-          value: 'localhost'
-        },
-        {
-          label: 'Porta',
-          name: 'port',
-          value: '4300'
-        }
-      ]
-    }
-  ];
+  const listener = message => {
 
-  socketService.onMessage(message => {
-
-    if (message && message.type === 'settings')
+    if (message && message.type === 'settings') {
       callback(message.data);
-  });
-  socketService.send({
-    
+      socketService.removeMessageListener(listener);
+    }
+  };
+  socketService.addMessageListener(listener);
+  socketService.sendMessage({
+    type: 'settings'
   });
 }
